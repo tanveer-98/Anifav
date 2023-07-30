@@ -235,7 +235,7 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
             }
 
             </div>
-        <div className={plotStyle}> {details.description}</div>
+        <div className={plotStyle}> {details.description.replaceAll('<br>','')}</div>
         <div className={miscStyle}>
           Popularity <span className={spanStyle}> ⭐ {details.popularity}</span>
         </div>
