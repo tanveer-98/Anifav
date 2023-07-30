@@ -193,7 +193,7 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
       const updatedFavMovies = favmovies.filter(
         (favMovie) => favMovie.id != id
       );
-   
+
       setFavMovies(updatedFavMovies);
     } else {
       // Add movie to favorites
@@ -201,7 +201,7 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
     }
   };
   useEffect(() => {
-
+    console.log("called inside details");
     const favValue = favmovies.some((movie) => movie.id == id);
     setIsFav(favValue);
   }, [handleToggleFavorite]);
@@ -212,7 +212,7 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
       <div className={subTitle}>
         <div className={typeStyle}>{details.type}</div>
         <div className={yearStyle}>{details.Year}</div>
-        {/* <div className={yearStyle}>Rated-{details.Rated}</div> */}
+
         <div className={yearStyle}>{details.duration} Min</div>
       </div>
       <div className={imageContainer}>
@@ -223,26 +223,13 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
           src={details.coverImage?.large}
           alt="No image"
         />
-        {/* <LazyLoadImage
-       
-       src = {details.Poster}
-       alt="nothing to display"
-       placeholder = {<Skeleton width="100%" height="300px" borderRadius="10px" />}
-       /> */}
 
         <div className={plotStyleDesktop}>
           {details.description.replaceAll("<br>", "")}
         </div>
       </div>
 
-      {/* <div className={titleStyle}>{id}</div> */}
       <div className={DetailsContainer}>
-        {/* <div className={genreStyle}> {details.genre[0]}</div> */}
-        {/* <div className={subTitle}> */}
-        {/* <div className={typeStyle}> ⭐{details.popularity}</div> */}
-        {/* <div className={typeStyle}> {Math.floor(parseInt(details.imdbVotes.replaceAll(',',""))/1000).toString()}K Votes</div> */}
-
-        {/* </div> */}
         <div className={plotStyle}> {details.description}</div>
         <div className={miscStyle}>
           Popularity <span className={spanStyle}> ⭐ {details.popularity}</span>
@@ -263,7 +250,6 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
         {isFav ? "Remove Fav" : "Add Fav"}
       </button>
     </div>
-    // <div></div>
   );
 };
 

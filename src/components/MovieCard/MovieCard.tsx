@@ -187,12 +187,7 @@ const MovieCard = ({ id, title, genres, type , coverImage}: IMovie) => {
             {/* <div className={yearStyle}>Year: {Year}</div> */}
             <div className={typeStyle}>Type: {type}</div>
           </div>
-          <button
-            className={favoriteButtonStyle}
-            onClick={(event) => handleToggleFavorite(event)}
-          >
-            {isFavorite ? "Remove Fav" : "Add Fav"}
-          </button>
+          
         </div>
       )}
     </>
