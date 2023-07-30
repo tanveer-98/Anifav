@@ -101,8 +101,8 @@ const favoriteButtonStyle = css`
 `;
 
 const imageContainer = css`
-width: 80%;
-// height: 300px;
+  width: 80%;
+  // height: 300px;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -161,12 +161,12 @@ const spanStyle = css`
 `;
 
 const genreContainer = css`
-  display : flex; 
+  display: flex;
   gap: 2px;
   align-items: center;
-  flex-direction : row;
-  flex-wrap : wrap;
-`
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
 interface IMovieDetailsCard {
   id: string;
   details: IMovieDetails;
@@ -220,22 +220,18 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
           src={details.coverImage?.large}
           alt="No image"
         />
-
-        {/* <div className={plotStyleDesktop}>
-          {details.description.replaceAll("<br>", "")}
-        </div> */}
       </div>
 
       <div className={DetailsContainer}>
-      <div className={genreContainer}>
-            {
-              details.genres?.map((element)=>{
-                return <div className={genreStyle}>{element}</div>
-              })
-            }
-
-            </div>
-        <div className={plotStyle}> {details.description.replaceAll('<br>','')}</div>
+        <div className={genreContainer}>
+          {details.genres?.map((element) => {
+            return <div className={genreStyle}>{element}</div>;
+          })}
+        </div>
+        <div className={plotStyle}>
+          {" "}
+          {details.description.replaceAll("<br>", "")}
+        </div>
         <div className={miscStyle}>
           Popularity <span className={spanStyle}> ⭐ {details.popularity}</span>
         </div>

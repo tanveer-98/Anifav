@@ -54,9 +54,9 @@ const SkeletonMovieCard = () => {
         placeholder={<Skeleton width="200px" height="20px" borderRadius="10px" />} // Your JSX placeholder element
       /> */}
           <Skeleton width="100%" height="300px" borderRadius="10px" />
-          {/* <img  src={Poster} alt=" NO image "  loading="lazy" width="100%" height="500px"/> */}
+        
         </div>
-        {/* <div className={titleStyle}>{id}</div> */}
+      
         <div className={flexContainer}>
           <Skeleton width="100%" height="40px" borderRadius="10px" />
           <Skeleton width="100%" height="40px" borderRadius="10px" />
@@ -65,9 +65,7 @@ const SkeletonMovieCard = () => {
         </div>
      
       <Skeleton width="100%" height="40px" className="" borderRadius="10px" />
-      {/* <button className={favoriteButtonStyle} onClick={(event)=>handleToggleFavorite(event)}>
-        {isFavorite ? 'Remove Fav' : 'Add Fav'}
-      </button> */}
+    
     </div>
   );
 };
