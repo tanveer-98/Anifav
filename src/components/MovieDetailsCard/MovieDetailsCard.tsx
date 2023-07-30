@@ -101,7 +101,8 @@ const favoriteButtonStyle = css`
 `;
 
 const imageContainer = css`
-  width: 100%;
+width: 80%;
+// height: 300px;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -110,18 +111,17 @@ const imageContainer = css`
 `;
 
 const image = css`
-  width: 200px;
-  height: 300px;
-  object-fit: contain;
 
-  @media (min-width: 500px) {
-    width: 300px;
-    height: 400px;
-  }
+  object-fit: fill;
 
-  @media (min-width: 601px) {
-    margin-right: 0px;
-  }
+  // @media (min-width: 500px) {
+  //   width: 300px;
+  //   height: 400px;
+  // }
+
+  // @media (min-width: 601px) {
+  //   margin-right: 0px;
+  // }
 `;
 const DetailsContainer = css`
   display: flex;
@@ -170,6 +170,13 @@ const spanStyle = css`
   font-size: 13px;
 `;
 
+const genreContainer = css`
+  display : flex; 
+  gap: 2px;
+  align-items: center;
+  flex-direction : row;
+  flex-wrap : wrap;
+`
 interface IMovieDetailsCard {
   id: string;
   details: IMovieDetails;
@@ -224,12 +231,20 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
           alt="No image"
         />
 
-        <div className={plotStyleDesktop}>
+        {/* <div className={plotStyleDesktop}>
           {details.description.replaceAll("<br>", "")}
-        </div>
+        </div> */}
       </div>
 
       <div className={DetailsContainer}>
+      <div className={genreContainer}>
+            {
+              details.genres?.map((element)=>{
+                return <div className={genreStyle}>{element}</div>
+              })
+            }
+
+            </div>
         <div className={plotStyle}> {details.description}</div>
         <div className={miscStyle}>
           Popularity <span className={spanStyle}> ⭐ {details.popularity}</span>

@@ -8,11 +8,10 @@ import React, {
 } from "react";
 import { MovieContext } from "../../context/MovieContext";
 import { useNavigate } from "react-router-dom";
-// import "./movielistStyles.css";
+
 import { css } from "@emotion/css";
 import MovieCard from "../MovieCard/MovieCard";
 import { getAnime } from "../../services/getAnime";
-
 import Loading from "../Loading/Loading";
 import Button from "../Button/Button";
 
@@ -30,11 +29,6 @@ const moviecontainer = css`
     /* One column for mobile view */
     grid-template-columns: 1fr;
   }
-`;
-const navContainer = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const headingStyle = css`
