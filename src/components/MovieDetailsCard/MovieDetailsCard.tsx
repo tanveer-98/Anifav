@@ -111,17 +111,7 @@ width: 80%;
 `;
 
 const image = css`
-
   object-fit: fill;
-
-  // @media (min-width: 500px) {
-  //   width: 300px;
-  //   height: 400px;
-  // }
-
-  // @media (min-width: 601px) {
-  //   margin-right: 0px;
-  // }
 `;
 const DetailsContainer = css`
   display: flex;
@@ -208,7 +198,7 @@ const MovieDetailsCard = ({ id, details }: IMovieDetailsCard) => {
     }
   };
   useEffect(() => {
-    console.log("called inside details");
+    // console.log("called inside details");
     const favValue = favmovies.some((movie) => movie.id == id);
     setIsFav(favValue);
   }, [handleToggleFavorite]);
