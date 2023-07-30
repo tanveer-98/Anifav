@@ -3,11 +3,10 @@ import React from 'react'
 import {css} from '@emotion/css';
 
 interface IButton {
-  children : React.ReactNode
  text : string;
  bgcolor : string;
 }
-const Button = ({children , text, bgcolor="#4f4f4f"} : IButton) => {
+const Button = ({text, bgcolor="#4f4f4f"} : IButton) => {
     const buttonStyle = css`
     color: white;
     background-color: ${bgcolor} ;

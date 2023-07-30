@@ -15,6 +15,7 @@ import { getAnime } from "../../services/getAnime";
 
 import Loading from "../Loading/Loading";
 import Button from "../Button/Button";
+
 const moviecontainer = css`
   display: grid;
   margin-top: 200px;
@@ -191,13 +192,12 @@ const MovieList = () => {
               : ""}
           </div>
           <div className={ScrollContainer}>
-           <Button bgcolor ="#33ff" text="Scroll for More">
-            Scroll For More 
-           </Button>
+           <Button bgcolor ="#33ff" text="Scroll for More"/>
+          
             </div>
-          <div ref={listRef} />
         </div>
       )}
+      <div ref={listRef} />
     </>
   );
 };
